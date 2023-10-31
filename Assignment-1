@@ -1,0 +1,347 @@
+1. What is the exact output of the program below?
+#include <iostream>
+using namespace std;
+int main()
+{
+int n = 4, k = 2;
+cout << ++n << endl;
+cout << n << endl;
+cout << n++ << endl;
+cout << n << endl;
+cout << -n << endl;
+cout << n << endl;
+cout << --n << endl;
+cout << n << endl;
+cout << n-- << endl;
+cout << n << endl;
+cout << n + k << endl;
+cout << n << endl;
+cout << k << endl;
+cout << n << k << endl;
+cout << n << endl;
+cout << " " << n << endl;
+cout << " n" << endl;
+cout << "\n" << endl;
+cout << " n * n = "; //CAREFUL!
+cout << n * n << endl;
+cout << 'n' << endl;
+return 0;
+}
+
+
+
+
+
+
+
+OUTPUT:
+5
+5
+5
+6
+-6
+6
+5
+5
+5
+4
+6
+4
+2
+42
+4
+ 4
+ n
+
+
+ n * n = 16
+n
+
+--------------------------------
+Process exited after 0.4727 seconds with return value 0
+Press any key to continue . . .
+
+2.What is the output of the program below?
+#include <iostream>
+using namespace std;
+int main()
+{
+int n = 3;
+while (n >= 0)
+{
+cout << n * n << endl;
+--n;
+}
+cout << n << endl;
+while (n < 4)
+cout << ++n << endl;
+cout << n << endl;
+while (n >= 0)
+cout << (n /= 2) << endl;
+return 0;
+}
+
+out put: 
+
+9
+4
+1
+0
+-1
+0
+1
+2
+3
+4
+4
+2
+1
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+
+
+
+3.What is the output of the program below?
+#include <iostream>
+using namespace std;
+int main()
+{
+int n;
+cout << (n = 4) << endl;
+cout << (n == 4) << endl;
+cout << (n > 3) << endl;
+cout << (n < 4) << endl;
+cout << (n = 0) << endl;
+cout << (n == 0) << endl;
+cout << (n > 0) << endl;
+cout << (n && 4) << endl;
+cout << (n || 4) << endl;
+cout << (!n) << endl;
+return 0;
+}
+
+
+OUTPUT:
+
+4
+1
+1
+0
+0
+1
+0
+0
+1
+1
+
+
+4.What is the output of the following program?
+#include <iostream>
+using namespace std;
+int main()
+{
+enum color_type {red, orange, yellow, green, blue, violet};
+color_type shirt, pants;
+shirt = red;
+pants = blue;
+cout << shirt << " " << pants << endl;
+return 0;
+}
+
+OUTPUT:
+
+0 4
+
+
+5.What is the output when the following code fragment is executed?
+int i = 5, j = 6, k = 7, n = 3;
+cout << i + j * k - k % n << endl;
+cout << i / n << endl;
+
+
+OUTPUT:
+46
+1
+
+6.What is the output when the following code fragment is executed?
+int found = 0, count = 5;
+if (!found || --count == 0)
+cout << "danger" << endl;
+cout << "count = " << count << endl;
+
+
+OUTPUT:
+
+count = 4
+
+
+7.The loop shown below has been written by an inexperienced C++ programmer. The behavior of
+the loop is not correctly represented by the formatting.
+int n = 10;
+while (n > 0)
+n /= 2;
+cout << n * n << endl;
+a. What is the output of the loop as it is written?
+b. Correct the syntax of the loop so that the logic of the corrected loop corresponds to the formatting of
+the original loop. What is the output of the corrected loop?
+c. Correct the formatting of the (original) loop so that the new format reflects the logical behavior of the
+original loop.
+
+OUTPUT:
+a. Output of the original loop:
+The loop continually divides n by 2 while n is greater than 0. Once n becomes 0 or less, the loop stops. In this case, the loop will keep dividing n until it reaches 0.
+
+int n = 10;
+while (n > 0)
+    n /= 2;
+cout << n * n << endl;
+
+The loop will execute as follows:
+
+Iteration 1: n = 10 / 2 = 5
+Iteration 2: n = 5 / 2 = 2
+Iteration 3: n = 2 / 2 = 1
+Iteration 4: n = 1 / 2 = 0 (as integer division results in 0)
+After the loop ends, it will output n * n, where n is 0. Therefore, the output will be 0 * 0 = 0.
+
+
+b. Corrected syntax of the loop to match the original logic:
+
+To maintain the same logic as the original loop, the loop needs a different variable to store the original value of n to perform the calculation at the end. Additionally, the variable n should not be modified in the loop.
+
+
+int n = 10;
+int originalN = n; // Store the original value of n
+while (n > 0)
+    n /= 2;
+cout << originalN * originalN << endl; // Output the square of the original value of n
+
+c. Corrected formatting reflecting the logical behavior of the original loop:
+
+The corrected formatting that reflects the logical behavior of the original loop would be to ensure indentation and curly braces for the while loop, making the code clearer and more understandable:
+
+
+int n = 10;
+while (n > 0) {
+    n /= 2;
+}
+cout << n * n << endl;
+
+
+This improved formatting makes the structure of the loop clearer and maintains the original logic as intended by the inexperienced programmer.
+
+
+
+8.Remove all the unnecessary tests from the nested conditional statement below.
+float income;
+cout << "Enter your monthly income: ";
+cin >> income;
+if (income < 0.0)
+cout << "You are going farther into debt every month." << endl;
+else if (income >= 0.0 && income < 1200.00)
+cout << "You are living below the poverty line." << endl;
+else if (income >= 1200.00 && income < 2500.00)
+cout << "You are living in moderate comfort." << endl;
+else if (income >= 2500.00)
+cout << "You are well off." << endl;
+
+OUTPUT:
+
+float income;
+cout << "Enter your monthly income: ";
+cin >> income;
+
+if (income < 0.0)
+    cout << "You are going farther into debt every month." << endl;
+else if (income < 1200.00)
+    cout << "You are living below the poverty line." << endl;
+else if (income < 2500.00)
+    cout << "You are living in moderate comfort." << endl;
+else
+    cout << "You are well off." << endl;
+
+
+9.Answer the questions below concerning the following fragment of code.
+int n;
+cout << "Enter an integer: ";
+cin >> n;
+if (n < 10)
+cout << "less than 10" << endl;
+else if (n > 5)
+cout << "greater than 5" << endl;
+else
+cout << "not interesting" << endl;
+a. What will be the output of the fragment above if the interactive user enters the integer value 0 ?
+b. What will be the output of the fragment above if the interactive user enters the integer value 15 ?
+c. What will be the output of the fragment above if the interactive user enters the integer value 7 ?
+d. What values for n will cause the output of the fragment above to be "not interesting"?
+
+OUTPUT:
+
+
+a. If the user enters the integer value 0:
+
+0 is less than 10, so the first condition if (n < 10) is true.
+The code will print "less than 10" and then exit the conditional block.
+The output will be: "less than 10"
+b. If the user enters the integer value 15:
+
+15 is greater than 5, so the first condition if (n < 10) is false.
+The second condition else if (n > 5) is true.
+The code will print "greater than 5" and then exit the conditional block.
+The output will be: "greater than 5"
+c. If the user enters the integer value 7:
+
+7 is greater than 5, so the first condition if (n < 10) is true.
+The code will print "less than 10" and then exit the conditional block.
+The output will be: "less than 10"
+d. Values for n that will cause the output of the fragment to be "not interesting":
+
+No specific value for n will cause the output to be "not interesting". This is because the else statement (which prints "not interesting") will only execute if neither of the preceding conditions is met. In this case, all possible values of n will satisfy at least one of the conditions:
+Values less than 10 will satisfy the first condition ("less than 10").
+Values greater than 5 will satisfy the second condition ("greater than 5").
+Therefore, for any value of n, it will fulfill one of these conditions and the output will not be "not interesting".
+
+
+
+
+10.Rewrite the following code fragment so that it uses a "do...while..." loop to accomplish the same
+task.
+int n;
+cout << "Enter a non-negative integer: ";
+cin >> n;
+while (n < 0)
+{
+cout << "The integer you entered is negative." << endl;
+cout << "Enter a non-negative integer: ";
+cin >> n;
+}
+
+OUTPUT:
+
+
+int n;
+
+do {
+    cout << "Enter a non-negative integer: ";
+    cin >> n;
+
+    if (n < 0) {
+        cout << "The integer you entered is negative." << endl;
+    }
+} while (n < 0);
