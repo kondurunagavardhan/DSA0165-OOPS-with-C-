@@ -1,0 +1,200 @@
+1. Write a C++ program to demonstrate the overloading of a unary operator. 
+
+
+
+#include<iostream.h>
+#include<conio.h>
+
+class complex {
+    int a, b, c;
+public:
+
+    complex() {
+    }
+
+    void getvalue() {
+        cout << "Enter the Two Numbers:";
+        cin >> a>>b;
+    }
+
+    void operator++() {
+        a = ++a;
+        b = ++b;
+    }
+
+    void operator--() {
+        a = --a;
+        b = --b;
+    }
+
+    void display() {
+        cout << a << "+\t" << b << "i" << endl;
+    }
+};
+
+void main() {
+    clrscr();
+    complex obj;
+    obj.getvalue();
+    obj++;
+    cout << "Increment Complex Number\n";
+    obj.display();
+    obj--;
+    cout << "Decrement Complex Number\n";
+    obj.display();
+    getch();
+}
+
+
+OUTPUT: 
+
+Enter the two numbers: 3 6              
+Increment Complex Number
+4 +               7i
+Decrement Complex Number
+3 +               6i
+
+2. Write a C++ program to demonstrate the overloading of a binary operator
+
+#include <iostream>  
+using namespace std;  
+class Complex_num  
+{  
+    int x, y;  
+    public:    
+        void inp()  
+        {  
+            cout << " Input two complex number: " << endl;  
+            cin >> x >> y;  
+        }          
+        Complex_num operator + (Complex_num obj)  
+        {  
+            Complex_num A;
+            A.x = x + obj.x;  
+            A.y = y + obj.y;  
+            return (A);  
+        }           
+        Complex_num operator - (Complex_num obj)  
+        {  
+            Complex_num A;   
+            A.x = x - obj.x;  
+            A.y = y - obj.y;  
+            return (A);  
+        }         
+        void print()  
+        {  
+            cout << x << " + " << y << "i" << "\n";  
+        }   
+        void print2()  
+        {  
+            cout << x << " - " << y << "i" << "\n";  
+        }  
+};  
+int main ()  
+{  
+Complex_num x1, y1, sum, sub;  
+    x1.inp();  
+    y1.inp();
+    sum = x1 + y1;  
+    sub = x1 - y1;  
+    cout << "\n Entered values are: \n";  
+    cout << " \t";  
+    x1.print();  
+    cout << " \t";  
+    y1.print();   
+    cout << "\n The addition of two complex (real and imaginary) numbers: ";  
+    sum.print();    
+    cout << "\n The subtraction of two complex (real and imaginary) numbers: ";
+    sub.print2();  
+    return 0;  
+}  
+
+
+OUTPUT:
+
+Input two complex number: 
+5
+3
+Input two complex number: 
+8
+5
+Entered values are: 
+ 	5 + 3i
+ 	8 + 5i
+
+ The addition of two complex (real and imaginary) numbers: 13 + 8i
+
+ The subtraction of two complex (real and imaginary) numbers: -3 - -2i
+
+
+
+
+3. What is the output of the following code?
+#include<iostream.h>
+#include<string.h> 
+void main()
+ {
+ cout<<strlen(“Hello, World.\n”)<<”\n”; 
+}
+
+
+OUTPUT:
+
+ERROR!
+g++ /tmp/qCxcokOb5a.cpp
+/tmp/qCxcokOb5a.cpp:1:9: fatal error: iostream.h: No such file or directory
+    1 | #include<iostream.h>
+      |         ^~~~~~
+compilation terminated.
+
+
+4..  What is the output of the following code?
+ #include<iostream.h> 
+void main() 
+{  
+int a = 20; 
+int &n = a; 
+n=a++; 
+a=n++;
+cout<<a <<”,”<<n<<endl; 
+}
+
+OUTPUT:
+
+ERROR!
+g++ /tmp/qCxcokOb5a.cpp
+/tmp/qCxcokOb5a.cpp:1:10: fatal error: iostream.h: No such file or directory
+    1 |  #include<iostream.h>
+      |          ^~~~~~
+compilation terminated.
+\
+
+
+5. Write down a C++ program to implement function overloading.
+
+
+
+#include <iostream>
+using namespace std;
+void add(int a, int b)
+{
+  cout << "sum = " << (a + b);
+}
+void add(double a, double b)
+{
+    cout << endl << "sum = " << (a + b);
+}
+int main()
+{
+    add(30, 20);
+    add(50.3, 60.2);
+    return 0;
+}
+
+
+OUTPUT:
+
+
+
+sum = 50
+sum = 110.5
