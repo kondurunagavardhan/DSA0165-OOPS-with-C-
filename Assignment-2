@@ -1,0 +1,53 @@
+2. #include <iostream>
+
+// Function to calculate how many children can be carried by 'numBuses' buses
+int calculateChildren(int numBuses) {
+    int childrenPerBus = 48;
+    return numBuses * childrenPerBus;
+}
+
+int main() {
+    int numBuses = 3;
+    int totalChildren = calculateChildren(numBuses);
+
+    std::cout << "Three buses can carry " << totalChildren << " children." << std::endl;
+
+    return 0;
+}
+
+OUPUT : 
+Three buses can carry 144 children.
+
+1 . #include <iostream>
+
+int main() {
+    int painting1_age = 10000;  // Age of the first painting in years
+    int painting2_age = 12000;  // Age of the second painting in years
+    int painting3_age = 8000;   // Age of the third painting in years
+    int painting4_age = 15000;  // Age of the fourth painting in years
+
+    if (painting1_age < painting2_age && painting1_age < painting3_age && painting1_age < painting4_age) {
+        std::cout << "The oldest painting is the first painting with an age of " << painting1_age << " years." << std::endl;
+    } else if (painting2_age < painting3_age && painting2_age < painting4_age) {
+        std::cout << "The oldest painting is the second painting with an age of " << painting2_age << " years." << std::endl;
+    } else if (painting3_age < painting4_age) {
+        std::cout << "The oldest painting is the third painting with an age of " << painting3_age << " years." << std::endl;
+    } else {
+        std::cout << "The oldest painting is the fourth painting with an age of " << painting4_age << " years." << std::endl;
+    }
+
+    return 0;
+}
+
+3 #include <iostream>
+  double calculateEarnings(double costPerKg = 10.0, double sellingPricePerKg = 12.0) {
+    return sellingPricePerKg - costPerKg;
+}
+
+int main() {
+    double earnings = calculateEarnings(); // Default values are used
+
+    std::cout << "Kiran earns " << earnings << " rupees on selling 1 kg of plastic." << std::endl;
+
+    return 0;
+}
